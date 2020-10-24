@@ -12,18 +12,15 @@ def getData(fileName):
     res = []
 
     for lst in rawData:
-        if len(res) > 5:
+        if len(lst.split(" ")) > 3:
             res.append(lst.split(" "))
 
     for i in res:
-        if len(i)> 3:
-            i.pop(-1)
-            i.pop(-1)
+        i.pop(-1)
 
     return res, fileName
 
 def checkAlg(dataAndFileName):
-
     data, fileName = dataAndFileName
 
     R = "R"
@@ -35,7 +32,7 @@ def checkAlg(dataAndFileName):
 
     tempData = data
 
-    newFile = "res"+fileName
+    newFile = "RES"+fileName
     resFile = open(newFile, "w+")
 
     for alg in tempData:
@@ -86,9 +83,8 @@ def checkAlg(dataAndFileName):
             resFile.write(resAlg)
 
     resFile.close()
-    
+
 textFile = str(input("What is the name of the file located in this directory which contains <RU> gen algs"
                      " created by Cube Explorer you want to evaluate?: "))
 
-checkAlg(getData(textFile))
-input("press enter to close")
+checkAlg(getData(textFile+".txt"))
