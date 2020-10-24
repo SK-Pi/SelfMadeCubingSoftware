@@ -12,7 +12,8 @@ def getData(fileName):
     res = []
 
     for lst in rawData:
-        res.append(lst.split(" "))
+        if len(res) > 5:
+            res.append(lst.split(" "))
 
     for i in res:
         if len(i)> 3:
