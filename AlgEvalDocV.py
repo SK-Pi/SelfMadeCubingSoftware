@@ -15,8 +15,9 @@ def getData(fileName):
         res.append(lst.split(" "))
 
     for i in res:
-        i.pop(-1)
-        i.pop(-1)
+        if len(i)> 3:
+            i.pop(-1)
+            i.pop(-1)
 
     return res, fileName
 
